@@ -28,6 +28,8 @@ public class MainActivity extends Activity {
         refreshBtn = $(R.id.refresh_info);
         upgradeInfoTv = $(R.id.upgrade_info);
 
+        Beta.autoInit = true;
+
         /***** Beta高级设置 *****/
         Beta.betaStartDelay = 0; // 初始化延时设为0，立即初始化
 
