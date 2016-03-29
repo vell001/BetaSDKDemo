@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">BuglyBetaDemo</string>
+    <string name="beta">BuglyBetaDemo</string>
+    <string name="check_upgrade">检查更新</string>
+    <string name="new_info">升级新特性：</string>
+    <string name="refresh_info">刷新</string>
+
+</resources>
