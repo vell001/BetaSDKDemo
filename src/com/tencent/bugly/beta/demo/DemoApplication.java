@@ -36,9 +36,9 @@ public class DemoApplication extends Application{
          */
         Beta.upgradeCheckPeriod = 60 * 1000;
         /**
-         * 设置启动延时为3s（默认延时10s），APP启动3s后初始化SDK，避免影响APP启动速度;
+         * 设置启动延时为1s（默认延时3s），APP启动1s后初始化SDK，避免影响APP启动速度;
          */
-        Beta.betaStartDelay = 3 * 1000;
+        Beta.initDelay = 1 * 1000;
         /**
          * 设置通知栏大图标，largeIconId为项目中的图片资源;
          */
