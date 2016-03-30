@@ -7,13 +7,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 
 public class MainActivity extends Activity {
-
-    public static final String APP_ID = "900020779"; // TODO 替换成bugly上注册的appid
 
     Button checkUpgradeBtn;
     Button refreshBtn;
@@ -27,12 +24,6 @@ public class MainActivity extends Activity {
         checkUpgradeBtn = $(R.id.check_upgrade);
         refreshBtn = $(R.id.refresh_info);
         upgradeInfoTv = $(R.id.upgrade_info);
-
-        /***** Beta高级设置 *****/
-        Beta.betaStartDelay = 0; // 初始化延时设为0，立即初始化
-
-        /***** 统一初始化Bugly产品，包含Beta *****/
-        Bugly.init(this, APP_ID, true);
 
         checkUpgradeBtn.setOnClickListener(new OnClickListener() {
 
