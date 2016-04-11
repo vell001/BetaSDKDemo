@@ -6,6 +6,8 @@
 package com.tencent.bugly.beta.demo;
 
 import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
     Button checkUpgradeBtn;
     Button refreshBtn;
     TextView upgradeInfoTv;
+    TextView appInfoTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MainActivity extends Activity {
         checkUpgradeBtn = $(R.id.check_upgrade);
         refreshBtn = $(R.id.refresh_info);
         upgradeInfoTv = $(R.id.upgrade_info);
+        appInfoTv = $(R.id.app_info);
+
+        loadAppInfo();
 
         checkUpgradeBtn.setOnClickListener(new OnClickListener() {
 
@@ -83,6 +89,23 @@ public class MainActivity extends Activity {
         info.append("弹窗类型（1:建议 2:强制 3:手工）: ").append(upgradeInfo.upgradeType);
 
         upgradeInfoTv.setText(info);
+    }
+
+    private void loadAppInfo() {
+        try {
+            StringBuilder info = new StringBuilder();
+            PackageInfo packageInfo =
+                    this.getPackageManager().getPackageInfo(this.getPackageName(),
+                            PackageManager.GET_CONFIGURATIONS);
+            int versionCode = packageInfo.versionCode;
+            String versionName = packageInfo.versionName;
+            info.append("appid: ").append(DemoApplication.APP_ID).append(" ")
+                    .append("channel: ").append(DemoApplication.APP_CHANNEL).append(" ")
+                    .append("version: ").append(versionName).append(".").append(versionCode);
+            appInfoTv.setText(info);
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
     }
 
     /**
