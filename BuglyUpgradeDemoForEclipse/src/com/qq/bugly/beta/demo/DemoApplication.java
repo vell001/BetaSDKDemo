@@ -3,10 +3,9 @@
  * <p/>
  * Created by vellhe on 16/4/7.
  */
-package com.tencent.bugly.beta.demo;
+package com.qq.bugly.beta.demo;
 
 import android.app.Application;
-import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.os.Environment;
 
 import com.tencent.bugly.Bugly;

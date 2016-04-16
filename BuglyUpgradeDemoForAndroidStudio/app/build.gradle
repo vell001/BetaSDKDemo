@@ -5,10 +5,10 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.tencent.bugly.beta.demo"
+        applicationId "com.qq.bugly.beta.demo"
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 1
+        versionCode 3
         versionName "1.0"
 
         ndk {

@@ -1,4 +1,4 @@
-package com.tencent.bugly.beta.demo;
+package com.qq.bugly.beta.demo;
 
 import org.junit.Test;
 
